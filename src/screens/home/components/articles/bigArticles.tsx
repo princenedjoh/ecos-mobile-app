@@ -24,6 +24,7 @@ const ArticleFeature = ({
     const [dataResponse, setResponse] = useState()
     const getArticles = async () => {
         const response = await getAllArticles()
+        console.log({response})
         setData(response.results)
         setResponse(dataResponse)
     }
@@ -78,10 +79,10 @@ const ArticleFeature = ({
                                     >
                                         <LargeCard
                                             navigation={navigation}
-                                            title = {item.data.title[0].text}
-                                            description={item.data.content[0].text}
+                                            title = {item.data.title ? item.data.title[0]?.text : ''}
+                                            description={item.data.content ? item.data.content[0].text : ''}
                                             date={new Date(item.data.date)}
-                                            coverImageURL={{uri : item.data.cover_image.url}}
+                                            coverImageURL={{uri : item.data.cover_image ? item.data.cover_image.url : ''}}
                                             full_name1={item.data.full_name1}
                                         />
                                         {
