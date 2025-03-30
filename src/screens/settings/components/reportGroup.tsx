@@ -10,7 +10,6 @@ import Confirmation from "../../../components/modal/confirmation";
 import OverlayActivityIndicator from "../../../components/overlayActivityIndicator/overlayActivityIndicator";
 import { publicAPI } from "../../../api/api";
 import { Alert, Platform } from "react-native";
-import RNFS from 'react-native-fs';
 import { baseURL } from "../../../constants/api";
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';

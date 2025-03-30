@@ -25,7 +25,7 @@ const ArticleFeature = ({
     const [data, setData] = useState<any>([])
     
     const getArticles = async () => {
-        const response = await getAllArticles()
+        const response = await getAllArticles("article")
         console.log({response})
         setData(response.results)
     }

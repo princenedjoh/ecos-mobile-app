@@ -31,7 +31,7 @@ const Article = ({
     }
 
     const getArticles = async () => {
-        const response = await getAllArticles()
+        const response = await getAllArticles("article")
         const filteredData = response.results.filter((item : any, index : number) => item.type === 'article')
         console.log({filteredData})
         setData(filteredData)

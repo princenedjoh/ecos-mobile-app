@@ -23,7 +23,7 @@ const Satellites = ({
     const [missionData, setMissionData] = useState<'loading' | any>('loading')
 
     const getData = async () => {
-        const data = await getPrismicData()
+        const data = await getPrismicData("satellite_missions")
         const filteredData = data.results.filter((item : any, index : number) => item.type === 'satellite_missions')
         if(filteredData)
             setAllMissionsData(filteredData)

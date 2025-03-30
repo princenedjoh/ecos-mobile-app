@@ -66,7 +66,7 @@ const LargeCard = ({
                     <AppTypography
                         numberOfLines={2}
                     >
-                        {description && JSON.parse(description)[0].text}
+                        {description}
                     </AppTypography>
                     <Flex
                         width={'auto'}

@@ -23,7 +23,7 @@ const SmallCard = ({
             activeOpacity={0.9}
             onPress={()=>navigation.navigate(screenNames.articlePost, {
                 title,
-                description : description,
+                description : JSON.parse(description)[0].text,
                 date : date.toString(),
                 coverImageURL,
                 full_name1

@@ -48,18 +48,12 @@ const ArticlePost = ({route} : any) => {
                         gap={20}
                         width={'auto'}
                     >
-                        {
-                            description &&
-                            JSON.parse(description).map((item : any, index : number) => (
-                                <AppTypography
-                                    size={TypographySize.sm2}
-                                    lineHeight={25}
-                                    key={index}
-                                >
-                                    {item.text}
-                                </AppTypography>
-                            ))
-                        }
+                        <AppTypography
+                            size={TypographySize.sm2}
+                            lineHeight={25}
+                        >
+                            {description}
+                        </AppTypography>
                     </Flex>
                 </Flex>
                 <RelatedPosts navigation={navigation}/>

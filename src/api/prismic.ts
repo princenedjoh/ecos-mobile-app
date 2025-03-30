@@ -14,21 +14,23 @@ export const getRef = async () => {
     }
 }
 
-export const getCurrentDocApi = async () => {
+export const getCurrentDocApi = async (type:IDataType) => {
     const ref = await getRef()
-    const api = `${docAPI}search?ref=${ref}&q=%5B%5Bat(document.type%2C%22article%22)%5D%5D`
+    const api = `${docAPI}search?ref=${ref}&q=%5B%5Bat(document.type%2C%22${type}%22)%5D%5D`
     return api
 }
 
-export const getAllArticles = async () : Promise<any> => {
-    const api = await getCurrentDocApi()
+export const getAllArticles = async (type:IDataType) : Promise<any> => {
+    const api = await getCurrentDocApi(type)
     console.log({api})
     const response = await axios.get(api)
     return response.data
 }
 
-export const getPrismicData = async () : Promise<any> => {
-    const api = await getCurrentDocApi()
+export const getPrismicData = async (type:IDataType) : Promise<any> => {
+    const api = await getCurrentDocApi(type)
     const response = await axios.get(api)
     return response.data
 }
+
+type IDataType = 'article' | 'satellite_missions'
