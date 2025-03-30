@@ -10,6 +10,7 @@ import { images } from "../../../assets/assets"
 import Profilename from "../../../components/profilename/profilename"
 import { NavigationProp } from "@react-navigation/native"
 import { articleTypes } from "../../../utils/types"
+import { useEffect } from "react"
 
 const BigArticles = ({
     articles,
@@ -25,11 +26,10 @@ const BigArticles = ({
         >
             <Flex
                 paddingHorizontal={sizes.marginSM}
-                paddingVertical={sizes.marginSM}
                 gap={15}
             >
                 {
-                    articles.map((item : any, index : number) => {
+                    articles?.map((item : any, index : number) => {
                         return (
                             <Flex
                                 direction="column"
