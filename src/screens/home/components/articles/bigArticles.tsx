@@ -21,12 +21,11 @@ const ArticleFeature = ({
     navigation : NavigationProp<any>
 }) => {
     const [data, setData] = useState<any>([])
-    const [dataResponse, setResponse] = useState()
+    
     const getArticles = async () => {
         const response = await getAllArticles()
         console.log({response})
         setData(response.results)
-        setResponse(dataResponse)
     }
 
     useEffect(()=>{
@@ -69,6 +68,7 @@ const ArticleFeature = ({
                         :
                         data.map((item : any, index : number) => {
                             return (
+                                index > 1 &&
                                 <TouchableOpacity
                                     key={index}
                                     onPress={()=>navigation.navigate(screenNames.articlePost)}
@@ -84,13 +84,8 @@ const ArticleFeature = ({
                                             date={new Date(item.data.date)}
                                             coverImageURL={{uri : item.data.cover_image ? item.data.cover_image.url : ''}}
                                             full_name1={item.data.full_name1}
+                                            width={sizes.screenWidth - 30}
                                         />
-                                        {
-                                            index < data.length - 1 &&
-                                            <Hr
-                                                marginLeft={85}
-                                            />
-                                        }
                                     </Flex>
                                 </TouchableOpacity>
                             )

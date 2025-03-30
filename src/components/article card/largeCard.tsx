@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, TouchableOpacity, View } from "react-native"
+import { DimensionValue, ImageBackground, StyleSheet, TouchableOpacity, View } from "react-native"
 import theme from "../../styles/theme"
 import Flex from "../../styles/components/flex"
 import AppTypography from "../../styles/components/appTypography"
@@ -12,8 +12,8 @@ import getDate from "../../utils/getDate"
 import Profilename from "../profilename/profilename"
 
 interface largCardTyes extends articleTypes {
-    width? : number,
-    height? : number,
+    width? : DimensionValue,
+    height? : DimensionValue,
 }
 
 const LargeCard = ({

@@ -16,12 +16,13 @@ export const getRef = async () => {
 
 export const getCurrentDocApi = async () => {
     const ref = await getRef()
-    const api = `${docAPI}search?ref=${ref}`
+    const api = `${docAPI}search?ref=${ref}&q=%5B%5Bat(document.type%2C%22article%22)%5D%5D`
     return api
 }
 
 export const getAllArticles = async () : Promise<any> => {
     const api = await getCurrentDocApi()
+    console.log({api})
     const response = await axios.get(api)
     return response.data
 }

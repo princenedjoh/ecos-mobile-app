@@ -36,10 +36,6 @@ const BigArticles = ({
                                 key={index}
                                 width={'auto'}
                             >
-                                <Profilename 
-                                    name="Prince Nedjoh"
-                                    image={images.profile1}
-                                />
                                 <LargeCard 
                                     navigation={navigation}
                                     title = {item.data.title[0]?.text}

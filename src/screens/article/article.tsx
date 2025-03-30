@@ -27,9 +27,10 @@ const Article = ({
     }
 
     const splitArticles = () => {
+        const dataCopy = data
         if(data.length >= 5){
-            const smallArticlesCopy = data.splice(0,3)
-            const largeArticlesCopy = data.splice(3)
+            const smallArticlesCopy = dataCopy.splice(0,3)
+            const largeArticlesCopy = data
             smallArticlesCopy.length === 0 
                 ? setSmallArticles([])
                 : setSmallArticles([...smallArticlesCopy])
