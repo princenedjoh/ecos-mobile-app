@@ -38,8 +38,8 @@ const BigArticles = ({
                             >
                                 <LargeCard 
                                     navigation={navigation}
-                                    title = {item.data.title[0].text}
-                                    description={JSON.stringify(item.data.content)}
+                                    title = {item.data.title[0]?.text}
+                                    description={item.data.content[0].text}
                                     date={new Date(item.data.date)}
                                     coverImageURL={{uri : item.data.cover_image.url}}
                                     full_name1={item.data.full_name1}

@@ -90,11 +90,13 @@ class PublicAPI {
     };
   
     post = async (url: string, body?: any, params? : any) : Promise<apiResponseType> => {
+      console.log("api called")
       try {
+        console.log(`${this.baseURL}${url}`)
         const response = await axios.post(`${this.baseURL}${url}`, body, {params});
         return {response : response.data}
       } catch (error : any) {
-        console.log(error)
+        console.log({error : error.response.data})
         return {error : {message : 'unauthorized', detail : error}}
       }
     };
